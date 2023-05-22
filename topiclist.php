@@ -57,7 +57,7 @@ END_OF_TEXT;
  
 <html>
 <head>
-    <title>简易论坛</title>
+    <title>Ulink SUBS Forum</title>
     <style type="text/css">
         table
         {
@@ -85,7 +85,8 @@ END_OF_TEXT;
     </style>
 </head>
 <body>
-    <h1>简易论坛</h1>
+    <h1>Welcome to Ulink SUBS Forum!</h1>
+    <h1>欢迎来到上海领科双语学校初中部论坛！</h1>
     <?php echo $display_block;?>
     <p>你也可以<a href="addtopic.php">新建一个主题</a>!</p>
 </body>
