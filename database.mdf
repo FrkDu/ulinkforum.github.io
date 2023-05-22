@@ -1,0 +1,104 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- 主机： 127.0.0.1
+-- 生成日期： 2019-06-01 
+-- 服务器版本： 10.1.37-MariaDB
+-- PHP 版本： 7.3.1
+ 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+ 
+ 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+ 
+--
+-- 数据库： `php_project01`
+--
+ 
+-- --------------------------------------------------------
+ 
+--
+-- 表的结构 `forum_posts`
+--
+ 
+CREATE TABLE `forum_posts` (
+  `post_id` int(11) NOT NULL,
+  `topic_id` int(11) NOT NULL,
+  `post_text` text,
+  `post_create_time` datetime DEFAULT NULL,
+  `post_owner` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+--
+-- 转存表中的数据 `forum_posts`
+--
+ 
+INSERT INTO `forum_posts` (`post_id`, `topic_id`, `post_text`, `post_create_time`, `post_owner`) VALUES
+(2, 2, 'I\'m interested in knowing how people got started in technology  -- did you thinker with household electronics? did you learn about it in school? did you parents buy you a computer and tell you to have at it.', '2019-06-01 09:09:38', 'jane@doe.com'),
+(6, 4, '如题，这是一个简易的论坛，用于测试的。\r\n', '2019-06-01 17:00:46', 'abc@163.com'),
+(7, 4, '这是一个测试的回复。', '2019-06-01 17:17:29', 'bat@baba.com');
+ 
+-- --------------------------------------------------------
+ 
+--
+-- 表的结构 `forum_topics`
+--
+ 
+CREATE TABLE `forum_topics` (
+  `topic_id` int(11) NOT NULL,
+  `topic_title` varchar(150) DEFAULT NULL,
+  `topic_create_time` datetime DEFAULT NULL,
+  `topic_owner` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+--
+-- 转存表中的数据 `forum_topics`
+--
+ 
+INSERT INTO `forum_topics` (`topic_id`, `topic_title`, `topic_create_time`, `topic_owner`) VALUES
+(2, 'How did you get statrted with technology?', '2019-06-01 09:09:38', 'jane@doe.com'),
+(4, '这是一个简易的论坛，用于测试。', '2019-06-01 17:00:46', 'abc@163.com');
+ 
+--
+-- 转储表的索引
+--
+ 
+--
+-- 表的索引 `forum_posts`
+--
+ALTER TABLE `forum_posts`
+  ADD PRIMARY KEY (`post_id`);
+ 
+--
+-- 表的索引 `forum_topics`
+--
+ALTER TABLE `forum_topics`
+  ADD PRIMARY KEY (`topic_id`);
+ 
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+ 
+--
+-- 使用表AUTO_INCREMENT `forum_posts`
+--
+ALTER TABLE `forum_posts`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ 
+--
+-- 使用表AUTO_INCREMENT `forum_topics`
+--
+ALTER TABLE `forum_topics`
+  MODIFY `topic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+ 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
